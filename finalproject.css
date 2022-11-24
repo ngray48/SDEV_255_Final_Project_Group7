@@ -1,0 +1,183 @@
+* { box-sizing: border-box; }
+
+header, nav, main, footer { display: block; }
+
+body {background-color: #BCCDDC;
+    color: #ffffff;
+    font-family: Verdana, Arial, sans-serif; }
+
+/* In case I want a wrapper... */
+#wrapper {
+    background-color: #BCCDDC;
+    color: #330000;
+    }
+
+header {
+    padding: .5em;
+    font-family: Georgia, serif;}
+
+nav { font-size: 1.2em;
+    text-align: center;
+    background-color: #7092C2;}
+
+nav a {text-decoration: none;}
+
+nav ul { display: flex;
+        list-style-type: none; 
+        flex-direction: column;
+        margin: 0;
+        padding-left: 0; }
+
+nav li { padding-top: .5em;
+        padding-bottom: .5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        width: 100%;
+        border-bottom: 1px solid #344873; }
+        
+nav a:link { color: #BCCDDC; }
+/* Do I want a visited color? */
+nav a:visited { color: #BCCDDC; }
+nav a:hover { color: #ffffff }
+
+nav ul ul { position: absolute;
+    background-color: #5564A0;
+    padding: 0;
+    text-align: left;
+    display: none; }
+nav ul ul li { border: 1px solid #00005D;
+ display: block;
+ width: 8em;
+ padding-left: 1em;
+ margin-left: 0; }
+nav li:hover ul { display: block; z-index: 1; }
+
+
+h1 {line-height: 200%;}
+h2 {color: #000000;
+    text-shadow: 2px 1px #ffffff;}
+
+/* code for Video */
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.quotes {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 25%;
+}
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+/* logo-banner */
+.banner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10%;
+}
+.responsive-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+}
+.bannerhero {
+    background-image: url(park.png);
+    background-color: #BCCDDC;
+    background-position: center;
+    background-size: cover;
+}
+.building {
+    box-shadow: 5px 5px #000000;
+}
+
+dt {color: #000000;
+    font-weight: bold;}
+
+.fosterin {color: #000000;
+    font-size: 1.2em;}
+
+table, td, th { border: 1px solid #000; }
+tr:hover { background-color: #ffffff;}
+td { text-align: center;}
+
+.table {
+    background-color: #BCCDDC;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+footer {font-size: .70em;
+    font-style: italic;
+    text-align: center;}
+
+
+form { display: flex;
+       flex-direction: column;
+       padding-left: 1em; width: 50%; }
+
+input, textarea { margin-bottom: 1em; }
+input[type=submit] { width: 10em; }
+
+#buildinghero {background-image: url(building_sm.jpeg);
+    height: 250px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;}
+
+#pathhero {background-image: url(path.png);
+    height: 250px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;}
+
+#supplyhero {background-image: url(supplies.jpeg);
+    height: 250px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+    body { background-color: #BCCDDC; }
+    nav ul { padding-left: 10%;
+            padding-right: 10%; }
+    #wrapper { margin: auto;
+                width: 80%; }
+    .banner { margin: auto;
+              width: 1000px;}
+}
+
+@media (min-width: 600px) {
+    h1 {font-size: 2em;
+        letter-spacing: .25em; }
+    nav ul { display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            padding-right: 2em; }
+    nav li { width: 12em;
+            border-bottom: none; }
+    section { padding-left: 2em;
+            padding-right: 2em; }
+    #flow { display: flex;
+        flex-direction: row; }
+    #mobile { display: none; }
+    #desktop { display: inline; }
+    #buildinghero { background-size: 100% 100%; }
+    #pathhero { background-size: 100% 100%; }
+    #supplyhero { background-size: 100% 100%; }
+    #gallery { display: none; }
+}
