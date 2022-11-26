@@ -2,13 +2,15 @@
 
 header, nav, main, footer { display: block; }
 
-body {background-color: #BCCDDC;
+body {background-color: #000000;
     color: #ffffff;
     font-family: Verdana, Arial, sans-serif; }
+/* old bg color was BCCDDC
+/* old nave color was 7092C2
 
 /* In case I want a wrapper... */
 #wrapper {
-    background-color: #BCCDDC;
+    background-color: #A897E1;
     color: #330000;
     }
 
@@ -18,7 +20,7 @@ header {
 
 nav { font-size: 1.2em;
     text-align: center;
-    background-color: #7092C2;}
+    background-color: #684ECE;}
 
 nav a {text-decoration: none;}
 
@@ -35,10 +37,10 @@ nav li { padding-top: .5em;
         width: 100%;
         border-bottom: 1px solid #344873; }
         
-nav a:link { color: #BCCDDC; }
+nav a:link { color: #ffffff; }
 /* Do I want a visited color? */
-nav a:visited { color: #BCCDDC; }
-nav a:hover { color: #ffffff }
+nav a:visited { color: #ffffff; }
+nav a:hover { color: #000000 }
 
 nav ul ul { position: absolute;
     background-color: #5564A0;
@@ -58,12 +60,81 @@ h2 {color: #000000;
     text-shadow: 2px 1px #ffffff;}
 
 /* code for Video */
-.container {
+.videocontainer {
     position: relative;
     overflow: hidden;
     width: 100%;
     padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
+
+/* Log In Form */
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+/*title student log in*/
+  span.title {
+    color: white;
+  }
+
+
+
 
 .center {
     margin: auto;
@@ -86,7 +157,7 @@ h2 {color: #000000;
     overflow: hidden;
     width: 100%;
     padding: 10%;
-    background-color: #7092C2;
+    background-color: #684ECE;
 }
 .responsive-banner {
     position: absolute;
@@ -97,12 +168,6 @@ h2 {color: #000000;
     width: 80%;
     height: 80%;
 }
-.bannerhero {
-    background-image: url(park.png);
-    background-color: #BCCDDC;
-    background-position: center;
-    background-size: cover;
-}
 
 
 dt {color: #000000;
@@ -110,14 +175,35 @@ dt {color: #000000;
 
 
 table, td, th { border: 1px solid #000; }
-tr:hover { background-color: #ffffff;}
+tr:hover { background-color: #000000;}
 td { text-align: center;}
 
 .table {
-    background-color: #BCCDDC;
+    background-color: #A897E1;
     margin-left: auto;
     margin-right: auto;
+    color: white;
     
+}
+
+.column {
+    float: left;
+    padding: 5px;
+}
+.columnright {
+    float: right;
+    padding: 5px;
+}
+.left, .right {
+    width: 48%;
+}
+.middle {
+    width: 4%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 footer {font-size: .70em;
@@ -134,7 +220,7 @@ input[type=submit] { width: 10em; }
 
 
 @media (min-width: 1024px) {
-    body { background-color: #BCCDDC; }
+    body { background-color: #000000; }
     nav ul { padding-left: 10%;
             padding-right: 10%; }
     #wrapper { margin: auto;
@@ -159,4 +245,20 @@ input[type=submit] { width: 10em; }
         flex-direction: row; }
     #mobile { display: none; }
     #desktop { display: inline; }
+}
+
+@media (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+@media screen and (max-width: 300px) {
+span.psw {
+    display: block;
+    float: none;
+    }
+.cancelbtn {
+  width: 100%;
+    }
 }
