@@ -40,28 +40,29 @@
     <p>G7 University wants to help you walk forward to your future.  Feel free to reach out to us with 
         any questions.
     </p>
+    <div class="center">
+        <p>
+            Required fields are marked with an asterisk *.
+        </p>
+        <form method="post" action="https://webdevbasics.net/scripts/pacific.php">
+        <label for="fname">*First Name:</label>
+        <input type="text" name="fname" id="fname" required>
 
-    <p>
-        Required fields are marked with an asterisk *.
-    </p>
-    <form method="post" action="https://webdevbasics.net/scripts/pacific.php">
-    <label for="fname">*First Name:</label>
-    <input type="text" name="fname" id="fname" required>
+        <label for="lname">*Last Name:</label>
+        <input type="text" name="lname" id="lname" required> 
 
-    <label for="lname">*Last Name:</label>
-    <input type="text" name="lname" id="lname" required> 
+        <label for="myEmail">*E-mail:</label>
+        <input type="email" name="myEmail" id="myEmail" required>
 
-    <label for="myEmail">*E-mail:</label>
-    <input type="email" name="myEmail" id="myEmail" required>
+        <label for="myPhone">*Phone:</label>
+        <input type="tel" name="myPhone" id="myPhone" required>
 
-    <label for="myPhone">*Phone:</label>
-    <input type="tel" name="myPhone" id="myPhone" required>
+        <label for="myComments">*"Comments:"</label><br>
+        <textarea name="myComments" id="myComments" rows="2" cols="20" required></textarea><br>
 
-    <label for="myComments">*"Comments:"</label><br>
-    <textarea name="myComments" id="myComments" rows="2" cols="20" required></textarea><br>
-
-    <input type="submit" name="mySubmit" id="mySubmit">
-</form>
+        <input type="submit" name="mySubmit" id="mySubmit">
+        </form>
+    </div>
 </main>
 <br>
 <hr>
