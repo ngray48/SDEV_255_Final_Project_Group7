@@ -48,10 +48,16 @@
 <table class="table">
     <tr>
         <td>
-            Class:
+            Course Name:
         </td>
         <td>
-            Course Number:
+            Course Description:
+        </td>
+        <td>
+            Subject Area:
+        </td>
+        <td>
+            Number of Credits:
         </td>
         <td>
             Teacher:
@@ -65,6 +71,12 @@
             SDEV 300
         </td>
         <td>
+            Software Development
+        </td>
+        <td>
+            3
+        </td>
+        <td>
             Holmes, Sherlock
         </td>
     </tr>
@@ -74,6 +86,12 @@
         </td>
         <td>
             SDEV 200
+        </td>
+        <td>
+            Software Development
+        </td>
+        <td>
+            3
         </td>
         <td>
             Einstein, Albert
@@ -87,12 +105,24 @@
             ENG 250
         </td>
         <td>
+            English
+        </td>
+        <td>
+            3
+        </td>
+        <td>
             Austin, Jane
         </td>
     </tr>
     <tr>
         <td>
             TBD:
+        </td>
+        <td>
+            TBD
+        </td>
+        <td>
+            TBD
         </td>
         <td>
             TBD
@@ -117,6 +147,15 @@
     <form method="post" action="">
     <label for="coursename">*Course Name:</label>
     <input type="text" name="coursename" id="coursename" required>
+    
+    <label for="teachname">*Course Description:</label>
+    <input type="text" name="coursedesc" id="coursedesc" required>
+    
+    <label for="teachname">*Subject Area</label>
+    <input type="text" name="subjarea" id="subjarea" required> 
+
+    <label for="teachname">*Number of Credits</label>
+    <input type="text" name="credits" id="credits" required> 
 
     <label for="teachname">*Course Teacher:</label>
     <input type="text" name="teachname" id="teachname" required> 
