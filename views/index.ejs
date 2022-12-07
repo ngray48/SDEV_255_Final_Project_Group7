@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+<title>G7 University</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="finalproject.css">
+<script src="script.js"></script>
+
+</head>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+ 
+<header>
+    <div class="banner">
+    <img class="responsive-banner" src="banner.png" alt="">
+    </div>
+ </header>
+<hr>
+
+<div id="wrapper">
+
+<main>
+    <div class="row">
+        <div class="column left">
+            <h2>G7 University</h2>
+            <p><span class="fosterin"> G7 University</span> is a school focused on IT.  If you have ever dreamed of a job
+            coding or creating programs, you have come to the right place!  Have a look at our 
+            <a href="/courses">courses</a> like:</p>
+            <ul>
+                <li>Web Development</li>
+                <li>Computer Programming</li>
+                <li>Writing</li>
+            </ul>
+        </div>
+
+        <div class="column middle">&nbsp;</div>
+
+        <div class="column right">
+            <form action="action_page.php" method="post">
+                
+                <div class="container">
+                    <p><span class="title"><strong>Student Log In</strong></span></p>
+                  <label for="uname"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+              
+                  <button type="submit">Login</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+                </div>
+              
+                <div class="container">
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+              </form>
+   
+        </div>    
+    </div>
+
+</main>
+<br>
+<hr>
+<%- include("./partials/footer.ejs") %>
+</div>
+</body>
+</html>
+
+
