@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+<title>G7 University - Courses</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/finalproject.css">
+
+</head>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+     <header>
+        <div class="banner">
+            <a href="/index"><img class="responsive-banner" src="/banner.png" alt=""></a>
+        </div>
+    </header>
+<hr>
+<div id="wrapper">
+
+<main>
+<div>
+    <h2><%= course.courseName %></h2>
+    <p>Add Class Info here</p>
+
+    <div class="center">
+        <p>Instructors - Modify Class Information Here</p>
+        </p>
+        <form method="post" action="/class/put/<%= course._id %>">
+        <label for="coursename">Course Name:</label>
+        <input value="<%= course.courseName %>" type="text" name="courseName" id="courseName" required>
+        
+        <label for="teachname">Course Description:</label>
+        <input value="<%= course.courseDescription %>" type="text" name="courseDescription" id="courseDescription" required>
+        
+        <label for="teachname">Subject Area</label>
+        <input value="<%= course.courseSubjectArea %>" type="text" name="courseSubjectArea" id="courseSubjectArea" required> 
+    
+        <label for="teachname">Number of Credits</label>
+        <input value="<%= course.courseCredits %>" type="text" name="courseCredits" id="courseCredits" required> 
+    
+        <label for="teachname">Course Teacher First Name:</label>
+        <input value="<%= course.courseTeacherFirstName %>" type="text" name="courseTeacherFirstName" id="courseTeacherFirstName" required>
+    
+        <label for="teachname">Course Teacher Last Name:</label>
+        <input value="<%= course.courseTeacherLastName %>" type="text" name="courseTeacherLastName" id="courseTeacherLastName" required> 
+    
+        <input type="submit" name="mySubmit" id="mySubmit">
+    </form>
+    </div>
+
+    <p>
+        If you have any questions, feel free to 
+        <a href="/contact"> contact</a> us.  
+    </p>
+
+</div>
+</main>
+<hr>
+<%- include("./partials/footer.ejs") %>
+</div>
+</body>
+</html>
+
+

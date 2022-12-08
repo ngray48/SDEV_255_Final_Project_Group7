@@ -1,0 +1,330 @@
+* { box-sizing: border-box; }
+
+header, nav, main, footer { display: block; }
+
+body {background-color: #000000;
+    color: #ffffff;
+    font-family: Verdana, Arial, sans-serif; }
+/* old bg color was BCCDDC
+/* old nave color was 7092C2
+
+/* In case I want a wrapper... */
+#wrapper {
+    background-color: #A897E1;
+    color: #330000;
+    }
+
+header {
+    padding: .5em;
+    font-family: Georgia, serif;}
+
+nav { font-size: 1.2em;
+    text-align: center;
+    background-color: #684ECE;}
+
+nav a {text-decoration: none;}
+
+nav ul { display: flex;
+        list-style-type: none; 
+        flex-direction: column;
+        margin: 0;
+        padding-left: 0; }
+
+nav li { padding-top: .5em;
+        padding-bottom: .5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        width: 100%;
+        border-bottom: 1px solid #344873; }
+        
+nav a:link { color: #ffffff; }
+/* Do I want a visited color? */
+nav a:visited { color: #ffffff; }
+nav a:hover { color: #000000 }
+
+nav ul ul { position: absolute;
+    background-color: #5564A0;
+    padding: 0;
+    text-align: left;
+    display: none; }
+nav ul ul li { border: 1px solid #00005D;
+ display: block;
+ width: 8em;
+ padding-left: 1em;
+ margin-left: 0; }
+nav li:hover ul { display: block; z-index: 1; }
+
+
+h1 {line-height: 200%;}
+h2 {color: #000000;
+    text-shadow: 2px 1px #ffffff;}
+
+/* code for Video */
+.videocontainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Log In Form */
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+/*title student log in*/
+  span.title {
+    color: white;
+  }
+
+
+
+.rowLink{
+    display: block;
+    text-decoration: none;
+}
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #5564A0;
+    padding: 10px;
+  }
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+/* logo-banner */
+.banner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10%;
+    background-color: #684ECE;
+}
+.responsive-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+}
+
+
+dt {color: #000000;
+    font-weight: bold;}
+
+
+table, td, th { border: 1px solid #000; }
+tr:hover { background-color: #000000;}
+td { text-align: center;}
+
+.table {
+    background-color: #A897E1;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    
+}
+
+.column {
+    float: left;
+    padding: 5px;
+}
+.columnright {
+    float: right;
+    padding: 5px;
+}
+.left, .right {
+    width: 48%;
+}
+.middle {
+    width: 4%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {font-size: .70em;
+    font-style: italic;
+    text-align: center;}
+
+
+form { display: flex;
+       flex-direction: column;
+       padding-left: 1em; width: 50%; }
+
+input, textarea { margin-bottom: 1em; }
+input[type=submit] { width: 10em; }
+
+
+@media (min-width: 1024px) {
+    body { background-color: #000000; }
+    nav ul { padding-left: 10%;
+            padding-right: 10%; }
+    #wrapper { margin: auto;
+                width: 80%; }
+    .banner { margin: auto;
+              width: 1000px;}
+}
+
+@media (min-width: 600px) {
+    h1 {font-size: 2em;
+        letter-spacing: .25em; }
+    nav ul { display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            padding-right: 2em; }
+    nav li { width: 12em;
+            border-bottom: none; }
+    section { padding-left: 2em;
+            padding-right: 2em; }
+    #flow { display: flex;
+        flex-direction: row; }
+    #mobile { display: none; }
+    #desktop { display: inline; }
+
+
+}
+
+* {box-sizing: border-box}
+input[type=text], input[type=password] {
+   width: 100%;
+   font-size: 28px;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+}
+label{
+   font-size: 15px;
+}
+input[type=text]:focus, input[type=password]:focus {
+   background-color: #ddd;
+   outline: none;
+}
+hr {
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+}
+button {
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgb(38, 85, 240);
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+ }
+
+button:hover {
+   opacity:20;
+}
+.cancel {
+   padding: 14px 20px;
+   background-color: #f86053;
+}
+.formContainer {
+   color: #7092C2;
+   padding: 48px;
+}
+.formContainer p{
+   font-size: 28px;
+}
+
+.instrButton {
+    background-color: #7aa1f5;
+    border-radius: 12px;
+    transition-duration: 0.25s;
+    width: 500px;
+    margin: auto;
+    width: 50%;
+    
+    
+}
+
+.instrButton:hover {
+    background-color: #1156ed;
+}
+
+.instrFlex {
+    display: flex;
+
+}
+
+.instrJC {
+    justify-content: center;
+}
