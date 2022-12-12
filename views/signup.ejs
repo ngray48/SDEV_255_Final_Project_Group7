@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+<title>G7 University</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="finalproject.css">
+
+</head>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+ 
+    <form class="center">
+        <div class="formContainer">
+        <h1>Sign Up Form</h1>
+        <hr>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <div class="email error"></div>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <div class="password error"></div>
+        <label>
+        <input type="checkbox" name="isInstructor" style="margin-bottom: 15px"> Are you an instructor?
+        </label>
+       
+        <div>
+        <button type="submit" class="signup">Sign Up</button>
+        </div>
+        </div>
+        </form>
+
+
+<br>
+<hr>
+<%- include("./partials/footer.ejs") %>
+</div>
+</body>
+
+<script>
+    const form  = document.querySelector('form')
+    const emailError = document.querySelector('.email.error')
+    const passwordError = document.querySelector('.password.error')
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        emailError.textContent = ''
+        passwordError.textContent = ''
+        const email = form.email.value
+        const password = form.password.value
+        const isInstructor = form.isInstructor.checked
+        console.log("we have been hit!! ;x")
+        console.log(isInstructor)
+        console.log("html" + email + " " + password)
+        try {
+            const result = await fetch('/signup', {
+                method: 'POST',
+                body: JSON.stringify({email, password, isInstructor}),
+                headers: {'Content-Type': 'application/json'}
+            })
+            const data = await result.json();
+            if(data.errors) {
+                emailError.textContent = data.errors.email
+                passwordError.textContent = data.errors.password
+            }
+            if(data.user) {
+                location.assign('/')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    });
+</script>
+
+</html>
+
+

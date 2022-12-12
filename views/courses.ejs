@@ -53,27 +53,29 @@
         <% courses.forEach(course => { %>
                     <tr id="<%= course._id %>">
                         <td>
-                            <a class="rowLink" href="/class/<%= course._id %>"><%= course.courseName %></a>
+                            <a class="rowLink" <% if(user.isInstructor == true) {%>href="/class/<%= course._id %>"<%} %>><%= course.courseName %></a>
                             
                         </td>
                         <td>
-                            <a class="rowLink" href="/class/<%= course._id %>"><%= course.courseDescription %></a>
+                            <a class="rowLink" <% if(user.isInstructor == true) {%>href="/class/<%= course._id %>"<%} %>><%= course.courseDescription %></a>
                             
                         </td>
                         <td>
-                            <a class="rowLink" href="/class/<%= course._id %>"><%= course.courseSubjectArea %></a>
+                            <a class="rowLink" <% if(user.isInstructor == true) {%>href="/class/<%= course._id %>"<%} %>><%= course.courseSubjectArea %></a>
                             
                         </td>
                         <td>
-                            <a class="rowLink" href="/class/<%= course._id %>"><%= course.courseCredits %></a>
+                            <a class="rowLink" <% if(user.isInstructor == true) {%>href="/class/<%= course._id %>"<%} %>><%= course.courseCredits %></a>
                             
                         </td>
                         <td>
-                            <a class="rowLink" href="/class/<%= course._id %>"><%= course.courseTeacherLastName %>, <%= course.courseTeacherFirstName %></a>
+                            <a class="rowLink" <% if(user.isInstructor == true) {%>href="/class/<%= course._id %>"<%} %>><%= course.courseTeacherLastName %>, <%= course.courseTeacherFirstName %></a>
                         </td>
+                        <% if(user.isInstructor == true) {%>
                         <td>
                             <input type="button" value="Remove" onclick="removeCourse()">
                         </td> 
+                        <%} %>
                     </tr>
         <% })} %>
     <tr>
@@ -102,6 +104,7 @@
 <br>
 
 </div>
+<% if(user.isInstructor == true) {%>
 <div class="center">
     <p>Instructors - Add Classes Here</p>
     <p>Required fields are marked with an asterisk *.
@@ -128,6 +131,7 @@
     <input type="submit" name="mySubmit" id="mySubmit">
 </form>
 </div>
+<% } %>
 </main>
 <hr>
 <%- include("./partials/footer.ejs") %>
