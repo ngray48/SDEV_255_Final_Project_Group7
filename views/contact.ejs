@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+<title>G7 University - Contact</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="finalproject.css">
+
+
+</head>
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+        <header>
+            <div class="banner">
+                <a href="index.html"><img class="responsive-banner" src="banner.png" alt=""></a>
+            </div>
+        </header>
+<hr>
+<div id="wrapper">
+
+<div> 
+</div>
+<main>
+    <h2>Contact G7 University</h2>
+    <p>G7 University wants to help you walk forward to your future.  Feel free to reach out to us with 
+        any questions.
+    </p>
+    <div class="center">
+        <p>
+            Required fields are marked with an asterisk *.
+        </p>
+        <form method="post" action="https://webdevbasics.net/scripts/pacific.php">
+        <label for="fname">*First Name:</label>
+        <input type="text" name="fname" id="fname" required>
+
+        <label for="lname">*Last Name:</label>
+        <input type="text" name="lname" id="lname" required> 
+
+        <label for="myEmail">*E-mail:</label>
+        <input type="email" name="myEmail" id="myEmail" required>
+
+        <label for="myPhone">*Phone:</label>
+        <input type="tel" name="myPhone" id="myPhone" required>
+
+        <label for="myComments">*"Comments:"</label><br>
+        <textarea name="myComments" id="myComments" rows="2" cols="20" required></textarea><br>
+
+        <input type="submit" name="mySubmit" id="mySubmit">
+        </form>
+    </div>
+</main>
+<br>
+<hr>
+<%- include("./partials/footer.ejs") %>
+</div>
+</body>
+</html>
+
+
