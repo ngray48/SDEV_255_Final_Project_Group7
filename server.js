@@ -1,6 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Course = require('./models/course')
+const cookieParser = require('cookie-parser')
+const authRoutes = require('./routes/authRoutes')
+const {requireAuth, checkUser} = require('./middleware/authMiddleware')
 
 
 const app = express()
@@ -16,9 +19,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'))
+app.use(express.json())
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true}))
 
 
+
+app.get('*', checkUser);
 //Basic Page Rendering
 app.get('/', (request, response) => {
     response.redirect('/index')
@@ -43,9 +50,6 @@ app.get('/student',  (request, response) => {
 app.get('/contact',  (request, response) => {
     response.render('contact')
 })
-app.get('/signup_login',  (request, response) => {
-    response.render('signup_login')
-})
 app.get('/class/:id',  (request, response) => {
     const id = request.params.id;
     console.log(id)
@@ -60,7 +64,7 @@ app.get('/class/:id',  (request, response) => {
 
 
 
-app.post('/courses/post', (request, response) => {
+app.post('/courses/post', requireAuth, (request, response) => {
     const course = new Course(request.body)
     course.save()
     .then((result) => {
@@ -71,7 +75,7 @@ app.post('/courses/post', (request, response) => {
       })
 })
 
-app.post('/class/put/:id', (request, response) => {
+app.post('/class/put/:id', requireAuth, (request, response) => {
     const id = request.params.id;
     const course = new Course(request.body)
     Course.findByIdAndDelete(id)
@@ -89,7 +93,7 @@ app.post('/class/put/:id', (request, response) => {
     })
 })
 
-app.delete('/courses/delete/:id', (request, response) => {
+app.delete('/courses/delete/:id', requireAuth, (request, response) => {
     const id = request.params.id;
     console.log(id)
     Course.findByIdAndDelete(id)
@@ -100,3 +104,5 @@ app.delete('/courses/delete/:id', (request, response) => {
         console.log(error)
     })
 })
+
+app.use(authRoutes)
