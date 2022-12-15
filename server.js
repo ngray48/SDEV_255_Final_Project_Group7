@@ -4,6 +4,7 @@ const Course = require('./models/course')
 const cookieParser = require('cookie-parser')
 const authRoutes = require('./routes/authRoutes')
 const {requireAuth, checkUser} = require('./middleware/authMiddleware')
+const { request } = require('express')
 
 
 const app = express()
@@ -60,6 +61,10 @@ app.get('/class/:id',  (request, response) => {
     .catch((error) => {
         console.log(error)
     })
+})
+
+app.get('/cart', (request, response) => {
+    response.render('cart')
 })
 
 
