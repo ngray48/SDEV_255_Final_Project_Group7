@@ -47,6 +47,8 @@
                     <tr id="<%= course._id %>">
                         <td>
                             <a class="rowLink" <% if(user.isInstructor == true) {%>href="/class/<%= course._id %>"<%} %>><%= course.courseName %></a>
+                            <button>Add to Schedule</button>
+                            
                             
                         </td>
                         <td>
