@@ -4,6 +4,7 @@ const Course = require('./models/course')
 const cookieParser = require('cookie-parser')
 const authRoutes = require('./routes/authRoutes')
 const {requireAuth, checkUser} = require('./middleware/authMiddleware')
+const {request} = require('express')
 
 
 const app = express()
@@ -62,6 +63,9 @@ app.get('/class/:id',  (request, response) => {
     })
 })
 
+app.get('/cart',(req, res)=> {
+    res.render('cart')
+})
 
 
 app.post('/courses/post', requireAuth, (request, response) => {

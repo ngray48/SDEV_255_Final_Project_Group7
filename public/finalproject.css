@@ -123,6 +123,9 @@ form {
     padding: 16px;
   }
   
+  .container2{
+    text-align: center;
+  }
   /* The "Forgot password" text */
   span.psw {
     float: right;
@@ -216,7 +219,7 @@ footer {font-size: .70em;
 
 form { display: flex;
        flex-direction: column;
-       padding-left: 1em; width: 50%; }
+       padding-left: 1em; width:100%; }
 
 input, textarea { margin-bottom: 1em; }
 input[type=submit] { width: 10em; }
